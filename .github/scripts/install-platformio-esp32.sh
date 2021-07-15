@@ -3,9 +3,9 @@
 export PLATFORMIO_ESP32_PATH="$HOME/.platformio/packages/framework-arduinoespressif32"
 PLATFORMIO_ESP32_URL="https://github.com/platformio/platform-espressif32.git#feature/idf-master"
 
-XTENSA32_TOOLCHAIN_VERSION="~1.80400.0"
-XTENSA32S2_TOOLCHAIN_VERSION="~1.80400.0"
-RISCV_TOOLCHAIN_VERSION="~1.80400.0"
+XTENSA32_TOOLCHAIN_VERSION="8.4.0+2021r1"
+XTENSA32S2_TOOLCHAIN_VERSION="8.4.0+2021r1"
+RISCV_TOOLCHAIN_VERSION="8.4.0+2021r1"
 ESPRESSIF_ORGANIZATION_NAME="espressif"
 
 echo "Installing Python Wheel ..."
