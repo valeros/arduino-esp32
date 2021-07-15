@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export PLATFORMIO_ESP32_PATH="$HOME/.platformio/packages/framework-arduinoespressif32"
-PLATFORMIO_ESP32_URL="https://github.com/platformio/platform-espressif32.git#feature/idf-master"
+PLATFORMIO_ESP32_URL="https://github.com/platformio/platform-espressif32.git#feature/arduino-idf-master"
 
 XTENSA32_TOOLCHAIN_VERSION="8.4.0+2021r1"
 XTENSA32S2_TOOLCHAIN_VERSION="8.4.0+2021r1"
@@ -32,9 +32,6 @@ replace_script+="data['packages']['toolchain-xtensa-esp32']['version']='$XTENSA3
 replace_script+="data['packages']['toolchain-xtensa-esp32s2']['version']='$XTENSA32S2_TOOLCHAIN_VERSION';"
 replace_script+="data['packages']['toolchain-riscv32-esp']['version']='$RISCV_TOOLCHAIN_VERSION';"
 replace_script+="fp.seek(0);fp.truncate();json.dump(data, fp, indent=2);fp.close()"
-
-echo $replace_script
-
 python -c "$replace_script"
 
 if [ "$GITHUB_REPOSITORY" == "espressif/arduino-esp32" ];  then
