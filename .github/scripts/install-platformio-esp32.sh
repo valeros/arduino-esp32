@@ -23,6 +23,7 @@ replace_script+="fp=open(os.path.expanduser('~/.platformio/platforms/espressif32
 replace_script+="data=json.load(fp);"
 # Use framework sources from the repository
 replace_script+="data['packages']['framework-arduinoespressif32']['version'] = '*';"
+replace_script+="del data['packages']['framework-arduinoespressif32']['owner']"
 # Use toolchain packages from the "espressif" organization
 replace_script+="data['packages']['toolchain-xtensa-esp32']['owner']='$ESPRESSIF_ORGANIZATION_NAME';"
 replace_script+="data['packages']['toolchain-xtensa-esp32s2']['owner']='$ESPRESSIF_ORGANIZATION_NAME';"
