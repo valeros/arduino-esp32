@@ -15,7 +15,7 @@ echo "Installing PlatformIO ..."
 pip install -U https://github.com/platformio/platformio/archive/develop.zip > /dev/null 2>&1
 
 echo "Installing Platform ESP32 ..."
-python -m platformio platform install $PLATFORMIO_ESP32_URL > /dev/null 2>&1
+python -m platformio platform install $PLATFORMIO_ESP32_URL
 
 echo "Replacing the package versions ..."
 replace_script="import json; import os;"
