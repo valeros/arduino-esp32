@@ -6,6 +6,7 @@ PLATFORMIO_ESP32_URL="https://github.com/platformio/platform-espressif32.git#fea
 XTENSA32_TOOLCHAIN_VERSION="8.4.0+2021r1"
 XTENSA32S2_TOOLCHAIN_VERSION="8.4.0+2021r1"
 RISCV_TOOLCHAIN_VERSION="8.4.0+2021r1"
+ESPTOOLPY_VERSION="~1.30100.0"
 ESPRESSIF_ORGANIZATION_NAME="espressif"
 
 echo "Installing Python Wheel ..."
@@ -32,6 +33,9 @@ replace_script+="data['packages']['toolchain-riscv32-esp']['owner']='$ESPRESSIF_
 replace_script+="data['packages']['toolchain-xtensa-esp32']['version']='$XTENSA32_TOOLCHAIN_VERSION';"
 replace_script+="data['packages']['toolchain-xtensa-esp32s2']['version']='$XTENSA32S2_TOOLCHAIN_VERSION';"
 replace_script+="data['packages']['toolchain-riscv32-esp']['version']='$RISCV_TOOLCHAIN_VERSION';"
+# esptool.py may requires an upstream version (for now platformio is the owner)
+replace_script+="data['packages']['tool-esptoolpy']['version']='$ESPTOOLPY_VERSION';"
+# Save results
 replace_script+="fp.seek(0);fp.truncate();json.dump(data, fp, indent=2);fp.close()"
 python -c "$replace_script"
 
